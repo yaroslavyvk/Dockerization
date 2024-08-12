@@ -11,6 +11,8 @@ This project is a simple Todo application built using FastAPI. Instead of using 
 
 
 ## Project Structure
+
+```
 .
 ├── routers/
 │   ├── auth.py            # Routes for user authentication
@@ -40,7 +42,7 @@ This project is a simple Todo application built using FastAPI. Instead of using 
 ├── PostgreSQLScript.sql   # SQL script for initializing the PostgreSQL database
 ├── README.md              # Project documentation
 └── requirements.txt       # List of Python dependencies required for the project
-
+```
 
 ## Running the Project
 
