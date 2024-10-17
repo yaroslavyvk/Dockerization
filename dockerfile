@@ -4,11 +4,13 @@ FROM python:${PYTHON_VERSION} AS builder
 WORKDIR /app
 COPY . .
 RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --prefix=/install -r requirements.txt
 
-FROM python:${PYTHON_VERSION} AS run
 
+FROM python:${PYTHON_VERSION}-slim AS run
 WORKDIR /app
+
+COPY --from=builder /install /usr/local
 COPY --from=builder /app .
 
 EXPOSE 8080
